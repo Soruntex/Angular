@@ -1,5 +1,5 @@
 <section>
-  <mat-card appearance="outlined" class="mat-whiteframe-2dp">
+  <mat-card appearance="outlined" class="mat-whiteframe-2dp" *ngFor="let person of people$ |async">
     <mat-card-title-group>
       <img mat-card-image [src]="person.photo" alt="person-photo" />
       <mat-card-title>
@@ -32,4 +32,3 @@
     </mat-card-content>
   </mat-card>
 </section>
-<button mat-fab color="accent"  (click)="getRandomPerson()"><i class="material-icons">autorenew</i></button>

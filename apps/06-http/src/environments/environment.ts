@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  peopleEndpoint: 'http://localhost:9000/api',
 };
 
 /*

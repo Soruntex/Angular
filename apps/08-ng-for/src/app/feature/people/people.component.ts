@@ -17,8 +17,4 @@ export class PeopleComponent implements OnInit {
   ngOnInit(): void {
     this.people$ = this.httpClient.get<Array<People>>(`${environment.peopleEndpoint}/peoples`);
   }
-
-  deletePerson(person: People): void {
-    this.people$ = this.httpClient.delete<Array<People>>(`${environment.peopleEndpoint}/peoples/${person.id}`);
-  }
 }

@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { PEOPLE } from '../../mocks/people.mock';
+import { EMPTY, map, Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 import { People } from '../../shared/models/people.model';
 
 @Component({
@@ -8,14 +10,15 @@ import { People } from '../../shared/models/people.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  person: People;
+  person$: Observable<People> = EMPTY;
+
+  constructor(private readonly httpCLient: HttpClient) {}
 
   ngOnInit(): void {
-    const [firstPerson] = PEOPLE;
-    this.person = firstPerson;
+    this.person$ = this.httpCLient.get<Array<People>>(`${environment}.peopleEndpoint/peoples`).pipe(map(([firstPerson]) => firstPerson));
   }
 
   getRandomPerson(): void {
-    this.person = PEOPLE[Math.floor(Math.random() * PEOPLE.length)];
+    this.person$ = this.httpCLient.get<People>(`${environment}.peopleEndpoint/peoples/random`);
   }
 }

@@ -5,12 +5,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './feature/home/home.component';
-import { MaterialDesignModule } from './material-design.module';
 import { PeopleComponent } from './feature/people/people.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, PeopleComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })

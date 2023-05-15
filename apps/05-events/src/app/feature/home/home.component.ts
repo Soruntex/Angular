@@ -14,4 +14,8 @@ export class HomeComponent implements OnInit {
     const [firstPerson] = PEOPLE;
     this.person = firstPerson;
   }
+
+  getRandomPerson():void{
+    this.person = PEOPLE[Math.floor(Math.random() * PEOPLE.length)];
+  }
 }

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppComponent } from './app.component';
+import { HomeComponentComponent } from './feature/home-component/home-component.component';
 import { MaterialDesignModule } from './material-design.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [HomeComponentComponent],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialDesignModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [HomeComponentComponent],
 })
 export class AppModule {}

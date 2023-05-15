@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PEOPLE } from '../../mocks/people.mock';
+import { People } from "../../shared/models/people.model";
 
 @Component({
   selector: 'sfeir-home',
@@ -6,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  name = 'Sfeir Luxembourg';
+  person : People;
 
   ngOnInit(): void {
-    console.log('HomeComponent.ngOnInit');
+    const [firstPerson] = PEOPLE;
+    this.person = firstPerson;
   }
 }

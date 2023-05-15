@@ -1,5 +1,5 @@
 <section>
-  <mat-card appearance="outlined" class="mat-whiteframe-2dp">
+  <mat-card appearance="outlined" class="mat-whiteframe-2dp" *ngIf="person$ |async as person">
     <mat-card-title-group>
       <img mat-card-image [src]="person.photo" alt="person-photo" />
       <mat-card-title>
